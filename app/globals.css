@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&family=Dancing+Script:wght@500;600&family=Playfair+Display:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'Manrope', sans-serif;
+  --font-script: 'Dancing Script', cursive;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: #1A1414;
+  background: #FBF7F2;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle paper grain on the whole page */
+body::before {
+  content: '';
+  position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.3 0 0 0 0 0.25 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23noise)' opacity='0.6'/%3E%3C/svg%3E");
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+}
+
+.font-display { font-family: var(--font-display); }
+.font-body { font-family: var(--font-body); }
+.font-script { font-family: var(--font-script); }
+
+/* Theme override for Je prie tout seul */
+.theme-prie {
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-script: 'Dancing Script', cursive;
+  color: #FAF7F0;
+  background: #1A103C;
+}
+
+.theme-prie .bg-ivory { background-color: #1A103C !important; }
+.theme-prie .bg-cream { background-color: #1E1B4B !important; }
+.theme-prie .bg-ink { background-color: #120A2A !important; }
+.theme-prie .bg-white { background-color: rgba(255, 255, 255, 0.05) !important; }
+.theme-prie .bg-white\/50 { background-color: rgba(255, 255, 255, 0.05) !important; }
+.theme-prie .bg-white\/60 { background-color: rgba(255, 255, 255, 0.06) !important; }
+.theme-prie .bg-ivory\/5 { background-color: rgba(255, 255, 255, 0.05) !important; }
+.theme-prie .bg-ivory\/10 { background-color: rgba(255, 255, 255, 0.08) !important; }
+.theme-prie .bg-rose-100 { background-color: rgba(251, 191, 36, 0.08) !important; }
+.theme-prie .from-ivory { --tw-gradient-from: #1A103C !important; --tw-gradient-to: #1A103C !important; }
+.theme-prie .to-ivory { --tw-gradient-to: #1A103C !important; }
+.theme-prie .via-cream { --tw-gradient-stops: var(--tw-gradient-from), #1E1B4B, var(--tw-gradient-to) !important; }
+.theme-prie .from-cream { --tw-gradient-from: #1E1B4B !important; --tw-gradient-to: #1A103C !important; }
+.theme-prie .to-cream { --tw-gradient-to: #1E1B4B !important; }
+.theme-prie .from-rose-50 { --tw-gradient-from: #1A103C !important; --tw-gradient-to: #1E1B4B !important; }
+.theme-prie .to-rose-50 { --tw-gradient-to: #1E1B4B !important; }
+.theme-prie .text-ink { color: #FAF7F0 !important; }
+.theme-prie .text-ash { color: #E7E1D7 !important; }
+.theme-prie .text-cream { color: #F5F0E8 !important; }
+.theme-prie .text-rose-500 { color: #FBBF24 !important; }
+.theme-prie .text-rose-400 { color: #FCD34D !important; }
+.theme-prie .text-gold { color: #FBBF24 !important; }
+.theme-prie .text-gold-light { color: #FCD34D !important; }
+.theme-prie .border-rose-100 { border-color: rgba(251, 191, 36, 0.25) !important; }
+.theme-prie .border-cream { border-color: rgba(251, 191, 36, 0.18) !important; }
+.theme-prie .border-gold\/20 { border-color: rgba(251, 191, 36, 0.25) !important; }
+.theme-prie .bg-gold { background-color: #FBBF24 !important; color: #1A103C !important; }
+.theme-prie .bg-gold-light { background-color: #FCD34D !important; color: #1A103C !important; }
+.theme-prie .hover\:bg-gold-light:hover { background-color: #FCD34D !important; }
+.theme-prie .hover\:bg-rose-500:hover { background-color: #10B981 !important; }
+.theme-prie .hover\:border-rose-200:hover { border-color: rgba(251, 191, 36, 0.4) !important; }
+.theme-prie .shadow-xl,
+.theme-prie .shadow-2xl { box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35) !important; }
+
+.text-balance { text-wrap: balance; }
+
+.gold-gradient {
+  background: linear-gradient(135deg, #D4B894 0%, #B89265 35%, #8E6E47 65%, #B89265 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border {
+  border-image: linear-gradient(135deg, #D4B894, #8E6E47, #D4B894) 1;
+}
+
+/* Sticky CTA bar — appears on scroll */
+.sticky-cta {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 50;
+  background: rgba(26, 20, 20, 0.96);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(184, 146, 101, 0.3);
+  padding: 12px 16px;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+.sticky-cta.visible { transform: translateY(0); }
+
+/* Reveal on scroll */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.9s ease, transform 0.9s ease; }
+.reveal.in-view { opacity: 1; transform: translateY(0); }
+
+/* Decorative ornament */
+.ornament::before, .ornament::after {
+  content: ''; display: inline-block; vertical-align: middle;
+  width: 60px; height: 1px;
+  background: linear-gradient(90deg, transparent, #B89265, transparent);
+  margin: 0 16px;
+}
+
+/* Button shimmer */
+.btn-shimmer {
+  position: relative; overflow: hidden;
+}
+.btn-shimmer::after {
+  content: ''; position: absolute; top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Hide scrollbar on mobile testimonial carousel */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }

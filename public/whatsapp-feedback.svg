@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 760" width="420" height="760" font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+  <defs>
+    <pattern id="wabg" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <rect width="60" height="60" fill="#ECE5DD"/>
+      <circle cx="10" cy="10" r="1" fill="#D8D0C5" opacity="0.6"/>
+      <circle cx="40" cy="30" r="1" fill="#D8D0C5" opacity="0.5"/>
+      <circle cx="25" cy="50" r="0.8" fill="#D8D0C5" opacity="0.5"/>
+      <path d="M5 35 Q15 30 25 35" stroke="#D8D0C5" stroke-width="0.5" fill="none" opacity="0.3"/>
+    </pattern>
+    <filter id="bubbleShadow"><feDropShadow dx="0" dy="1" stdDeviation="0.8" flood-opacity="0.12"/></filter>
+  </defs>
+
+  <!-- background -->
+  <rect width="420" height="760" fill="url(#wabg)"/>
+
+  <!-- Header WhatsApp -->
+  <rect x="0" y="0" width="420" height="64" fill="#075E54"/>
+  <text x="18" y="28" fill="white" font-size="13" opacity="0.85">←</text>
+  <circle cx="48" cy="32" r="16" fill="#B89265"/>
+  <text x="48" y="37" text-anchor="middle" fill="white" font-size="13" font-weight="600">E</text>
+  <text x="76" y="30" fill="white" font-size="15" font-weight="600">ELYX • Support</text>
+  <text x="76" y="46" fill="white" font-size="11" opacity="0.85">en ligne</text>
+  <text x="370" y="36" fill="white" font-size="16">⋮</text>
+  <text x="340" y="36" fill="white" font-size="14">📞</text>
+
+  <!-- Date badge -->
+  <rect x="170" y="80" width="80" height="22" rx="11" fill="#E1F2FB" opacity="0.95"/>
+  <text x="210" y="95" text-anchor="middle" fill="#54656F" font-size="10" font-weight="500">AUJOURD'HUI</text>
+
+  <!-- Message 1 — client (left, white) -->
+  <g filter="url(#bubbleShadow)">
+    <path d="M18 118 Q14 118 14 124 L14 162 Q14 168 20 168 L240 168 Q246 168 246 162 L246 124 Q246 118 240 118 L24 118 L18 124 Z" fill="#FFFFFF"/>
+  </g>
+  <text x="24" y="135" fill="#111B21" font-size="12.5">Bonjour je viens de finir le guide en</text>
+  <text x="24" y="151" fill="#111B21" font-size="12.5">2 jours. Je ne savais pas que j'avais</text>
+  <text x="24" y="167" fill="#111B21" font-size="12.5">autant de blocages 😭</text>
+  <text x="225" y="180" fill="#667781" font-size="9">14:22</text>
+
+  <!-- Message 2 — client (left) -->
+  <g filter="url(#bubbleShadow)">
+    <rect x="18" y="192" width="220" height="58" rx="8" fill="#FFFFFF"/>
+  </g>
+  <text x="24" y="210" fill="#111B21" font-size="12.5">Levier 4 m'a complètement</text>
+  <text x="24" y="225" fill="#111B21" font-size="12.5">retournée. J'ai pleuré en réalisant</text>
+  <text x="24" y="240" fill="#111B21" font-size="12.5">ce que je faisais sans le savoir.</text>
+  <text x="215" y="252" fill="#667781" font-size="9">14:23</text>
+
+  <!-- Message 3 — réponse ELYX (right, green) -->
+  <g filter="url(#bubbleShadow)">
+    <path d="M402 268 Q406 268 406 274 L406 296 Q406 302 400 302 L196 302 Q190 302 190 296 L190 274 Q190 268 196 268 L396 268 L402 274 Z" fill="#D9FDD3"/>
+  </g>
+  <text x="200" y="285" fill="#111B21" font-size="12.5">C'est exactement le déclic 🤍</text>
+  <text x="200" y="300" fill="#111B21" font-size="12.5">Continue, le levier 7 va t'aider.</text>
+  <text x="380" y="314" fill="#667781" font-size="9">14:25 ✓✓</text>
+
+  <!-- Message 4 — client -->
+  <g filter="url(#bubbleShadow)">
+    <rect x="18" y="328" width="240" height="74" rx="8" fill="#FFFFFF"/>
+  </g>
+  <text x="24" y="346" fill="#111B21" font-size="12.5">Merci. Hier soir il m'a écrit pour la</text>
+  <text x="24" y="361" fill="#111B21" font-size="12.5">première fois depuis 3 semaines. J'ai</text>
+  <text x="24" y="376" fill="#111B21" font-size="12.5">appliqué ce que tu dis sur l'espace.</text>
+  <text x="24" y="391" fill="#111B21" font-size="12.5">Ça marche vraiment 🥹</text>
+  <text x="237" y="403" fill="#667781" font-size="9">18:47</text>
+
+  <!-- Message 5 — autre cliente (left) -->
+  <g filter="url(#bubbleShadow)">
+    <path d="M18 422 Q14 422 14 428 L14 466 Q14 472 20 472 L246 472 Q252 472 252 466 L252 428 Q252 422 246 422 L24 422 L18 428 Z" fill="#FFFFFF"/>
+  </g>
+  <text x="24" y="440" fill="#111B21" font-size="12.5">Franchement les 2500 fcfa c'est</text>
+  <text x="24" y="455" fill="#111B21" font-size="12.5">rien comparé à ce que ça m'a</text>
+  <text x="24" y="470" fill="#111B21" font-size="12.5">apporté. Vous devriez vendre + cher</text>
+  <text x="232" y="484" fill="#667781" font-size="9">19:12</text>
+
+  <!-- Message 6 — réponse ELYX -->
+  <g filter="url(#bubbleShadow)">
+    <rect x="198" y="500" width="208" height="42" rx="8" fill="#D9FDD3"/>
+  </g>
+  <text x="204" y="518" fill="#111B21" font-size="12.5">Ahaha merci beaucoup 🌸</text>
+  <text x="204" y="533" fill="#111B21" font-size="12.5">Le but c'est qu'un max de</text>
+  <text x="204" y="540" fill="#111B21" font-size="12.5"/>
+  <text x="380" y="554" fill="#667781" font-size="9">19:14 ✓✓</text>
+
+  <!-- Message 7 — client -->
+  <g filter="url(#bubbleShadow)">
+    <rect x="18" y="568" width="234" height="60" rx="8" fill="#FFFFFF"/>
+  </g>
+  <text x="24" y="586" fill="#111B21" font-size="12.5">Je l'ai recommandé à 4 copines</text>
+  <text x="24" y="601" fill="#111B21" font-size="12.5">déjà. Une est passée commander</text>
+  <text x="24" y="616" fill="#111B21" font-size="12.5">hier. Vous faites un bon travail ❤️</text>
+  <text x="227" y="630" fill="#667781" font-size="9">21:08</text>
+
+  <!-- Message 8 — client (vocal) -->
+  <g filter="url(#bubbleShadow)">
+    <rect x="18" y="646" width="200" height="40" rx="20" fill="#FFFFFF"/>
+  </g>
+  <circle cx="38" cy="666" r="11" fill="#00A884"/>
+  <polygon points="35,661 35,671 43,666" fill="white"/>
+  <line x1="56" y1="666" x2="180" y2="666" stroke="#00A884" stroke-width="1.2" opacity="0.4"/>
+  <circle cx="80" cy="666" r="2" fill="#00A884"/>
+  <text x="190" y="670" fill="#667781" font-size="10">0:34</text>
+  <text x="200" y="697" fill="#667781" font-size="9">21:09</text>
+
+  <!-- Input bar -->
+  <rect x="0" y="708" width="420" height="52" fill="#F0F2F5"/>
+  <rect x="12" y="720" width="340" height="32" rx="16" fill="white"/>
+  <text x="28" y="740" fill="#8696A0" font-size="12">Message</text>
+  <text x="328" y="740" fill="#8696A0" font-size="14">😊</text>
+  <circle cx="380" cy="736" r="18" fill="#00A884"/>
+  <text x="380" y="741" text-anchor="middle" fill="white" font-size="14">🎤</text>
+</svg>
