@@ -1,5 +1,6 @@
 import CountdownTimer from '@/components/CountdownTimer';
 import ScrollReveal from '@/components/ScrollReveal';
+import PurchaseToast from '@/components/PurchaseToast';
 
 const CHECKOUT_URL = 'https://digiplex.mymaketou.store/fr/products/sois-la-femme-quun-homme-a-peur-de-perdre/checkout';
 const WHATSAPP_URL = 'https://wa.me/2290148065585';
@@ -42,6 +43,12 @@ const leviers = [
   { n: '08', titre: "L'énergie féminine qui donne envie de rester", desc: 'Sois un refuge, pas un champ de bataille. Sans devenir froide.' },
   { n: '09', titre: 'Ce qui rend la fidélité naturelle', desc: 'On ne retient pas un homme avec la peur. On le garde avec la valeur.' },
   { n: '10', titre: "Devenir la femme qu'on ne remplace pas", desc: 'Tu ne changes pas l\'homme. Tu changes la dynamique.' },
+];
+
+const purchases = [
+  { initials: 'DT', name: 'Djénéba T.', city: 'Ouagadougou', time: 'il y a 2 min' },
+  { initials: 'AM', name: 'Aïcha M.', city: 'Dakar', time: 'il y a 6 min' },
+  { initials: 'SK', name: 'Sonia K.', city: 'Abidjan', time: 'il y a 12 min' },
 ];
 
 
@@ -106,8 +113,9 @@ export default function Page() {
                 alt="Couverture du guide Sois la femme qu'un homme ne veut jamais perdre"
                 className="relative w-full rounded-sm shadow-2xl ring-1 ring-black/5"
               />
-              <div className="absolute -top-3 -right-3 bg-ink text-ivory text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 rounded-sm shadow-lg">
-                Nouveau
+              <div className="absolute -top-4 -right-2 sm:-right-5 bg-rose-500 text-white flex flex-col items-center justify-center px-4 py-2 rounded-sm shadow-xl transform rotate-3 border border-rose-300">
+                <span className="text-sm sm:text-base font-bold tracking-wider">2 500 FCFA</span>
+                <span className="text-[9px] uppercase tracking-[0.3em] opacity-90 mt-0.5">Seulement</span>
               </div>
             </div>
           </div>
@@ -120,9 +128,9 @@ export default function Page() {
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div className="reveal">
               <img
-                src="/soislafemme.jpg"
+                src="/Prioritairee.png"
                 alt="Femme sereine et confiante"
-                className="w-full rounded-sm shadow-xl ring-1 ring-black/5"
+                className="w-full rounded-sm shadow-xl ring-1 ring-black/5 object-cover aspect-[4/5]"
               />
             </div>
             <div className="reveal">
@@ -150,19 +158,19 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="mt-12 grid md:grid-cols-2 gap-6">
-            <div className="reveal">
-              <img
-                src="/soislafemme2.jpg"
-                alt="Femme charismatique et élégante"
-                className="w-full rounded-sm shadow-xl ring-1 ring-black/5"
-              />
+          <div className="mt-12 grid md:grid-cols-2 gap-6 items-center">
+            <div className="reveal bg-rose-50 p-10 sm:p-14 rounded-sm border border-rose-100 flex flex-col justify-center h-full">
+              <span className="text-gold text-4xl mb-4 font-display">"</span>
+              <p className="font-display text-2xl sm:text-3xl text-ink leading-snug mb-6">
+                Le vrai pouvoir d'une femme réside dans sa capacité à rester douce tout en étant impossible à manipuler.
+              </p>
+              <p className="text-ash text-sm uppercase tracking-[0.2em]">— ELYX</p>
             </div>
-            <div className="reveal">
+            <div className="reveal flex justify-center items-center">
               <img
-                src="/soislafemme3.jpg"
+                src="/proritaire.png"
                 alt="Couple connecté dans le respect"
-                className="w-full rounded-sm shadow-xl ring-1 ring-black/5"
+                className="w-full max-w-[540px] h-auto rounded-sm shadow-xl ring-1 ring-black/5"
               />
             </div>
           </div>
@@ -171,26 +179,39 @@ export default function Page() {
 
       {/* PAIN POINTS */}
       <section className="relative z-10 bg-ivory py-20 sm:py-28">
-        <div className="max-w-3xl mx-auto px-5 sm:px-8 text-center reveal">
-          <p className="text-gold text-xs tracking-[0.3em] uppercase mb-4">Tu te reconnais ?</p>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink leading-tight text-balance">
-            Ces pensées qui te <em className="text-rose-500">hantent</em> en silence…
-          </h2>
-        </div>
+        <div className="max-w-6xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          
+          {/* Photos Collage */}
+          <div className="order-2 lg:order-1 grid grid-cols-2 gap-4 reveal">
+            <img src="/utile.jpg" alt="Emotion 1" className="w-full rounded-sm shadow-md ring-1 ring-black/5 object-cover aspect-[4/5] -translate-y-4" />
+            <img src="/utilee.jpg" alt="Emotion 2" className="w-full rounded-sm shadow-md ring-1 ring-black/5 object-cover aspect-[4/5] translate-y-4" />
+            <img src="/utileee.jpg" alt="Emotion 3" className="w-full rounded-sm shadow-md ring-1 ring-black/5 object-cover aspect-[4/5] -translate-y-4" />
+            <img src="/Utileer.jpg" alt="Emotion 4" className="w-full rounded-sm shadow-md ring-1 ring-black/5 object-cover aspect-[4/5] translate-y-4" />
+          </div>
 
-        <div className="max-w-3xl mx-auto px-5 sm:px-8 mt-14 space-y-5">
-          {[
-            "Tu donnes tout — du temps, de l'amour, de la patience. Et tu reçois si peu en retour.",
-            "Tu te demandes pourquoi certaines femmes sont choisies, respectées, jamais remplacées… et pas toi.",
-            "Tu sens qu'il s'éloigne sans comprendre ce qui a changé. Tu marches sur des œufs.",
-            "Tu as peur de poser tes limites, peur qu'il parte, peur d'être trop ou pas assez.",
-            "Tu sais au fond de toi qu'il existe une autre façon d'aimer. Sans te perdre.",
-          ].map((t, i) => (
-            <div key={i} className="reveal flex gap-4 bg-white/50 backdrop-blur-sm border border-rose-100 rounded-sm p-5 hover:border-rose-200 transition-colors">
-              <span className="text-rose-400 text-xl leading-none mt-0.5">✕</span>
-              <p className="text-ash text-base sm:text-lg leading-relaxed">{t}</p>
+          <div className="order-1 lg:order-2">
+            <div className="reveal mb-10 text-left">
+              <p className="text-gold text-xs tracking-[0.3em] uppercase mb-4">Tu te reconnais ?</p>
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink leading-tight text-balance">
+                Ces pensées qui te <em className="text-rose-500">hantent</em> en silence…
+              </h2>
             </div>
-          ))}
+
+            <div className="space-y-4">
+              {[
+                "Tu donnes tout — du temps, de l'amour, de la patience. Et tu reçois si peu en retour.",
+                "Tu te demandes pourquoi certaines femmes sont choisies, respectées, jamais remplacées… et pas toi.",
+                "Tu sens qu'il s'éloigne sans comprendre ce qui a changé. Tu marches sur des œufs.",
+                "Tu as peur de poser tes limites, peur qu'il parte, peur d'être trop ou pas assez.",
+                "Tu sais au fond de toi qu'il existe une autre façon d'aimer. Sans te perdre.",
+              ].map((t, i) => (
+                <div key={i} className="reveal flex gap-4 bg-white/50 backdrop-blur-sm border border-rose-100 rounded-sm p-4 hover:border-rose-200 transition-colors">
+                  <span className="text-rose-400 text-xl leading-none mt-0.5">✕</span>
+                  <p className="text-ash text-sm sm:text-base leading-relaxed">{t}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -362,44 +383,56 @@ export default function Page() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="reveal bg-white border border-cream rounded-sm p-8 opacity-70">
-              <p className="text-xs text-ash tracking-[0.25em] uppercase mb-3">Choix 1 — Continuer</p>
-              <h3 className="font-display text-2xl text-ash mb-4">Laisser les choses comme elles sont…</h3>
-              <p className="text-ash leading-relaxed">
-                Continuer à donner sans cadre. Marcher sur des œufs. Avoir peur qu'il parte. Te demander chaque jour ce que tu fais de travers. Recommencer dans la prochaine relation. Pour toujours.
-              </p>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="reveal flex flex-col bg-white border border-cream rounded-sm overflow-hidden opacity-90 transition-opacity hover:opacity-100">
+              <img src="/utiler.jpg" alt="Choix 1" className="w-full h-auto" />
+              <div className="p-8 flex flex-col flex-grow">
+                <p className="text-xs text-ash tracking-[0.25em] uppercase mb-3">Choix 1 — Continuer</p>
+                <h3 className="font-display text-2xl text-ash mb-4">Laisser les choses comme elles sont…</h3>
+                <p className="text-ash leading-relaxed">
+                  Continuer à donner sans cadre. Marcher sur des œufs. Avoir peur qu'il parte. Te demander chaque jour ce que tu fais de travers. Recommencer dans la prochaine relation. Pour toujours.
+                </p>
+              </div>
             </div>
-            <div className="reveal bg-gradient-to-br from-rose-50 to-ivory border-2 border-gold rounded-sm p-8 shadow-xl">
-              <p className="text-xs text-gold tracking-[0.25em] uppercase mb-3">Choix 2 — Te libérer</p>
-              <h3 className="font-display text-2xl text-ink mb-4">Devenir cette femme qu'on choisit.</h3>
-              <p className="text-ink leading-relaxed">
-                Comprendre enfin comment fonctionne l'attachement. Poser des limites sans drame. Voir un homme s'investir parce que <em>tu apportes</em>, pas parce que tu retiens. Dès cette semaine.
-              </p>
+            <div className="reveal flex flex-col bg-gradient-to-br from-rose-50 to-ivory border-2 border-gold rounded-sm shadow-xl overflow-hidden transform md:-translate-y-4">
+              <img src="/utilere.jpg" alt="Choix 2" className="w-full h-auto" />
+              <div className="p-8 flex flex-col flex-grow">
+                <p className="text-xs text-gold tracking-[0.25em] uppercase mb-3">Choix 2 — Te libérer</p>
+                <h3 className="font-display text-2xl text-ink mb-4">Devenir cette femme qu'on choisit.</h3>
+                <p className="text-ink leading-relaxed">
+                  Comprendre enfin comment fonctionne l'attachement. Poser des limites sans drame. Voir un homme s'investir parce que <em>tu apportes</em>, pas parce que tu retiens. Dès cette semaine.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* FINAL CTA */}
-      <section className="relative z-10 bg-gradient-to-b from-ivory to-rose-50 py-20 sm:py-28">
-        <div className="max-w-2xl mx-auto px-5 sm:px-8 text-center">
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink leading-tight text-balance reveal">
-            Chaque jour sans agir,
-            <span className="block italic text-rose-500 mt-2">c'est une partie de toi qui s'éteint.</span>
-          </h2>
-          <p className="mt-7 text-ash text-lg leading-relaxed reveal text-balance">
-            Tu n'achètes pas un guide. Tu investis dans <em>ta valeur</em> — et dans une manière d'aimer qui ne te détruira plus jamais.
-          </p>
-          <a
-            href={CHECKOUT_URL}
-            className="btn-shimmer inline-flex items-center justify-center mt-10 bg-ink hover:bg-rose-500 text-ivory px-8 py-5 rounded-sm font-medium tracking-wider text-sm uppercase transition-colors reveal"
-          >
-            🌸 Je me libère maintenant — 2 500 FCFA
-          </a>
-          <p className="mt-6 text-ash text-sm reveal">
-            Une question ? <a href={WHATSAPP_URL} className="text-rose-500 underline hover:text-rose-600">Écris-nous sur WhatsApp</a>
-          </p>
+      <section className="relative z-10 bg-gradient-to-b from-ivory to-rose-50 py-20 sm:py-28 overflow-hidden">
+        <div className="max-w-6xl mx-auto px-5 sm:px-8 grid md:grid-cols-2 gap-12 items-center">
+          <div className="reveal relative flex justify-center">
+             <div className="absolute -inset-4 bg-gradient-to-tr from-rose-200 to-gold-light/20 blur-2xl rounded-full opacity-60 pointer-events-none"/>
+             <img src="/prioritaireee.png" alt="Femme épanouie et prioritaire" className="relative w-[90%] sm:w-full max-w-[450px] h-auto rounded-sm shadow-2xl ring-1 ring-black/5" />
+          </div>
+          <div className="reveal text-left">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink leading-tight text-balance">
+              Chaque jour sans agir,
+              <span className="block italic text-rose-500 mt-2">c'est une partie de toi qui s'éteint.</span>
+            </h2>
+            <p className="mt-7 text-ash text-lg leading-relaxed text-balance">
+              Tu n'achètes pas un guide. Tu investis dans <em>ta valeur</em> — et dans une manière d'aimer qui ne te détruira plus jamais. Fais de toi ta propre priorité.
+            </p>
+            <a
+              href={CHECKOUT_URL}
+              className="btn-shimmer inline-flex items-center justify-center mt-10 bg-ink hover:bg-rose-500 text-ivory px-8 py-5 rounded-sm font-medium tracking-wider text-sm uppercase transition-colors"
+            >
+              🌸 Je me libère maintenant — 2 500 FCFA
+            </a>
+            <p className="mt-6 text-ash text-sm">
+              Une question ? <a href={WHATSAPP_URL} className="text-rose-500 underline hover:text-rose-600">Écris-nous sur WhatsApp</a>
+            </p>
+          </div>
         </div>
       </section>
 
@@ -414,18 +447,20 @@ export default function Page() {
       </footer>
 
       {/* STICKY MOBILE CTA */}
-      <div id="sticky-cta" className="sticky-cta flex items-center justify-between gap-3">
-        <div className="text-ivory">
-          <p className="text-xs opacity-70 leading-none">Sois la femme…</p>
-          <p className="font-display text-lg leading-tight">2 500 <span className="text-xs">FCFA</span></p>
+      <div className="fixed bottom-0 left-0 right-0 z-[100] bg-ink/95 backdrop-blur-md border-t border-gold/30 p-3 flex sm:hidden items-center justify-between shadow-[0_-10px_30px_rgba(0,0,0,0.3)] touch-none">
+        <div className="text-ivory pl-2">
+          <p className="text-[10px] uppercase tracking-widest text-gold-light mb-0.5">Offre spéciale</p>
+          <p className="font-display text-lg leading-none">2 500 <span className="text-xs">FCFA</span></p>
         </div>
         <a
           href={CHECKOUT_URL}
-          className="bg-gold hover:bg-gold-light text-ink px-5 py-3 rounded-sm text-xs uppercase tracking-wider font-medium transition-colors flex-shrink-0"
+          className="bg-gold hover:bg-gold-light text-ink px-6 py-3 rounded-sm text-xs font-bold uppercase tracking-wider transition-colors shadow-lg active:scale-95"
         >
           Je le veux →
         </a>
       </div>
+
+      <PurchaseToast purchases={purchases} productName="Sois la femme" />
     </main>
   );
 }
