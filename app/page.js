@@ -413,7 +413,14 @@ export default function Page() {
         <div className="max-w-6xl mx-auto px-5 sm:px-8 grid md:grid-cols-2 gap-12 items-center">
           <div className="reveal relative flex justify-center">
              <div className="absolute -inset-4 bg-gradient-to-tr from-rose-200 to-gold-light/20 blur-2xl rounded-full opacity-60 pointer-events-none"/>
-             <img src="/prioritaireee.png" alt="Femme épanouie et prioritaire" className="relative w-[90%] sm:w-full max-w-[450px] h-auto rounded-sm shadow-2xl ring-1 ring-black/5" />
+             <div className="relative group">
+                <img src="/prioritaireee.png" alt="Femme épanouie et prioritaire" className="relative w-[90%] sm:w-full max-w-[450px] h-auto rounded-sm shadow-2xl ring-1 ring-black/5" />
+                
+                {/* Cache-Logo ELYX (Patch en bas à droite) */}
+                <div className="absolute bottom-4 right-4 sm:bottom-5 sm:right-5 bg-ink/90 backdrop-blur-sm pt-[2px] pb-[3px] px-3 rounded-sm shadow-md border border-gold/30">
+                  <span className="font-display text-gold-light text-xs sm:text-sm tracking-[0.2em]">ELYX</span>
+                </div>
+             </div>
           </div>
           <div className="reveal text-left">
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-ink leading-tight text-balance">
