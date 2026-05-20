@@ -453,18 +453,23 @@ export default function Page() {
         </div>
       </footer>
 
-      {/* STICKY MOBILE CTA */}
-      <div className="fixed bottom-0 left-0 right-0 z-[100] bg-ink/95 backdrop-blur-md border-t border-gold/30 p-3 flex sm:hidden items-center justify-between shadow-[0_-10px_30px_rgba(0,0,0,0.3)] touch-none">
-        <div className="text-ivory pl-2">
-          <p className="text-[10px] uppercase tracking-widest text-gold-light mb-0.5">Offre spéciale</p>
-          <p className="font-display text-lg leading-none">2 500 <span className="text-xs">FCFA</span></p>
+      {/* STICKY CTA (MOBILE & DESKTOP) */}
+      <div className="fixed bottom-0 left-0 right-0 z-[100] bg-ink/95 backdrop-blur-md border-t border-gold/30 shadow-[0_-10px_30px_rgba(0,0,0,0.3)]">
+        <div className="max-w-6xl mx-auto p-3 flex items-center justify-between sm:px-8">
+          <div className="text-ivory pl-2 sm:pl-0">
+            <p className="text-[10px] sm:text-xs uppercase tracking-widest text-gold-light mb-0.5">Offre spéciale</p>
+            <p className="font-display text-lg sm:text-2xl leading-none">2 500 <span className="text-xs sm:text-sm">FCFA</span></p>
+          </div>
+          <div className="flex items-center gap-6">
+            <p className="hidden md:block text-ash text-sm italic py-2">Sois la femme qu'un homme a peur de perdre</p>
+            <a
+              href={CHECKOUT_URL}
+              className="bg-gold hover:bg-gold-light text-ink px-6 py-3 sm:px-8 sm:py-3.5 rounded-sm text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors shadow-lg active:scale-95 whitespace-nowrap"
+            >
+              Je le veux →
+            </a>
+          </div>
         </div>
-        <a
-          href={CHECKOUT_URL}
-          className="bg-gold hover:bg-gold-light text-ink px-6 py-3 rounded-sm text-xs font-bold uppercase tracking-wider transition-colors shadow-lg active:scale-95"
-        >
-          Je le veux →
-        </a>
       </div>
 
       <PurchaseToast purchases={purchases} productName="Sois la femme" />
